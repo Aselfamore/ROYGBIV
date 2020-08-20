@@ -36,17 +36,38 @@ var ModeSwitcher = function(){
 
 ModeSwitcher.prototype.switchMode = function(){
   if (mode == 0){
-    this.loadedScriptsCounter = 0;
-    this.totalScriptsToLoad = scriptsHandler.getTotalScriptsToLoadCount();
-    if (this.totalScriptsToLoad > 0){
+    var that = this;
+
+    if (!isDeployment){
       terminal.clear();
-      terminal.printInfo(Text.LOADING_SCRIPTS);
+      terminal.printInfo(Text.LOADING_HANDTRACK_MODEL);
       canvas.style.visibility = "hidden";
       terminal.disable();
-      scriptsHandler.loadScripts(this.scriptReloadSuccessFunction, this.scriptReloadErrorFunction, this.scriptReloadCompilationErrorFunction);
     }else{
-      this.switchFromDesignToPreview();
+      appendtoDeploymentConsole("Loading HandTrack model.");
     }
+
+    handTrack.load(handTrackModelParameters).then(function(loadedModel){
+      if (!isDeployment){
+        canvas.style.visibility = "";
+        terminal.enable();
+        terminal.printInfo(Text.HANDTRACK_MODEL_LOADED);
+      }else{
+        appendtoDeploymentConsole("HandTrack model loaded.");
+      }
+      handTrackModel = loadedModel;
+      that.loadedScriptsCounter = 0;
+      that.totalScriptsToLoad = scriptsHandler.getTotalScriptsToLoadCount();
+      if (that.totalScriptsToLoad > 0){
+        terminal.clear();
+        terminal.printInfo(Text.LOADING_SCRIPTS);
+        canvas.style.visibility = "hidden";
+        terminal.disable();
+        scriptsHandler.loadScripts(that.scriptReloadSuccessFunction, that.scriptReloadErrorFunction, that.scriptReloadCompilationErrorFunction);
+      }else{
+        that.switchFromDesignToPreview();
+      }
+    });
   }else if (mode == 1){
     this.switchFromPreviewToDesign();
   }

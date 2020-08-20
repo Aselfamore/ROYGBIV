@@ -474,6 +474,15 @@ var Text;
 // SCRIPTING UTILITY FUNCTIONS
 var ROYGBIV;
 
+// HANDTRACKING
+var handTrackModel;
+var handTrackModelParameters = {
+  flipHorizontal: true,
+  maxNumBoxes: 2,
+  iouThreshold: 0.5,
+  scoreThreshold: 0.6,
+};
+
 // KEYCODE TO STRING MAP
 var keyCodeToChar = {
   8:"Backspace",9:"Tab",13:"Enter",16:"Shift",17:"Ctrl",18:"Alt",19:"Pause/Break",20:"Caps Lock",
