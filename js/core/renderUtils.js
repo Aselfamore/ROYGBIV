@@ -38,6 +38,7 @@ function render(){
     cpuOperationsHandler.handleActiveVirtualKeyboard();
     cpuOperationsHandler.handleInputText();
     cpuOperationsHandler.updateLightHandler();
+    handDetectionHandler.runDetection();
     delayedExecutionHandler.tick();
   }else{
     if (!isDeployment){

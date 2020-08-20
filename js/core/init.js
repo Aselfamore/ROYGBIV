@@ -35,12 +35,19 @@ window.onload = function() {
   lightningHandler = new LightningHandler();
   // STEERING HANDLER
   steeringHandler = new SteeringHandler();
+  // HAND DETECTION HANDLER
+  handDetectionHandler = new HandDetectionHandler();
   // TEXT POOL
   Text = (!isDeployment)? new Text(): 0;
   // DRAGABLE CLI
   var cliDiv = document.getElementById("cliDiv");
   cliDivheader = document.getElementById("cliDivheader");
   var terminalDiv = document.getElementById("terminalDiv");
+
+  // VIDEO
+  videoElement = document.getElementById("video");
+  video.width = 500;
+  video.height = 400;
 
   // CONTROLS TEST
   if (!isDeployment){

@@ -356,6 +356,7 @@ var scriptsHandler;
 var animationHandler;
 var lightHandler;
 var lightningHandler;
+var handDetectionHandler;
 var preConfiguredParticleSystems = new Object();
 var preConfiguredParticleSystemPools = new Object();
 var muzzleFlashes = new Object();
@@ -476,6 +477,7 @@ var ROYGBIV;
 
 // HANDTRACKING
 var handTrackModel;
+var videoElement;
 var handTrackModelParameters = {
   flipHorizontal: true,
   maxNumBoxes: 2,
