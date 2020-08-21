@@ -476,15 +476,15 @@ var Text;
 var ROYGBIV;
 
 // HANDTRACKING
-var HANDTRACK_VIDEO_WIDTH = 128;
-var HANDTRACK_VIDEO_HEIGHT = 128;
+var HANDTRACK_VIDEO_WIDTH = 256;
+var HANDTRACK_VIDEO_HEIGHT = 256;
 var handTrackModel;
 var videoElement;
 var handTrackModelParameters = {
   flipHorizontal: true,
   maxNumBoxes: 2,
   iouThreshold: 0.5,
-  scoreThreshold: 0.8,
+  scoreThreshold: 0.6,
 };
 
 // KEYCODE TO STRING MAP

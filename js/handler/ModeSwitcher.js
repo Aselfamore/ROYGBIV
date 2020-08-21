@@ -312,6 +312,8 @@ ModeSwitcher.prototype.switchFromPreviewToDesign = function(){
     Rhubarb.destroy();
   } catch(err) {}
 
+  handDetectionHandler.stop();
+
   history.replaceState(null, null, ' ');
 
   if (inputText){
