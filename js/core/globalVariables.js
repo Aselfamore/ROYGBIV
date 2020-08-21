@@ -482,7 +482,7 @@ var handTrackModelParameters = {
   flipHorizontal: true,
   maxNumBoxes: 2,
   iouThreshold: 0.5,
-  scoreThreshold: 0.6,
+  scoreThreshold: 0.8,
 };
 
 // KEYCODE TO STRING MAP

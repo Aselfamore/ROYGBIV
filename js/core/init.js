@@ -46,8 +46,8 @@ window.onload = function() {
 
   // VIDEO
   videoElement = document.getElementById("video");
-  video.width = 500;
-  video.height = 400;
+  video.width = 128;
+  video.height = 128;
 
   // CONTROLS TEST
   if (!isDeployment){

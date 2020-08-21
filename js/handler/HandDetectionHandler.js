@@ -22,8 +22,8 @@ HandDetectionHandler.prototype.onVideoNotEnabled = function(){
 
 }
 
-HandDetectionHandler.prototype.handleDetectedHand = function(prediction){
-  
+HandDetectionHandler.prototype.handleDetectedHand = function(x, y, width, height){
+  console.log(x, y);
 }
 
 HandDetectionHandler.prototype.runDetection = function(){
@@ -34,7 +34,8 @@ HandDetectionHandler.prototype.runDetection = function(){
   var that = this;
   handTrackModel.detect(videoElement).then(function(predictions){
     for (var i = 0; i < predictions.length; i ++){
-      that.handleDetectedHand(predictions[0]);
+      var bbox = predictions[i].bbox;
+      that.handleDetectedHand(bbox[0], bbox[1], bbox[2], bbox[3]);
     }
   });
 }
