@@ -46,12 +46,12 @@ window.onload = function() {
 
   // VIDEO
   videoElement = document.getElementById("video");
-  video.width = 128;
-  video.height = 128;
+  video.width = HANDTRACK_VIDEO_WIDTH;
+  video.height = HANDTRACK_VIDEO_HEIGHT;
 
   // CONTROLS TEST
   if (!isDeployment){
-    var controlClasses = [FreeControls, FPSControls, OrbitControls, CustomControls];
+    var controlClasses = [FreeControls, FPSControls, OrbitControls, CustomControls, HandTrackControls];
     var mandatoryControlMethods = [
       "update", "onMouseWheel", "onMouseMove", "onMouseDown", "onMouseUp",
       "onPinch", "onSwipe", "onTap", "onClick", "onActivated", "onDeactivated",

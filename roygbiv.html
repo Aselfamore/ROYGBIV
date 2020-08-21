@@ -138,6 +138,7 @@
     <script src="./js/handler/gui/JumpDescriptorCreatorGUIHandler.js"></script>
     <script src="./js/handler/HandDetectionHandler.js"></script>
     <script src="./js/engine_objects/Mass.js"></script>
+    <script src="./js/controls/HandTrackControls.js"></script>
     <style>
 		  body { margin: 0; position: fixed;}
 			canvas {display: block;}
@@ -189,7 +190,7 @@
       <div id="terminalDiv" class="terminal noselect"></div>
     </div>
      <!-- VIDEO -->
-     <video style="visibility: hidden;" autoplay="autoplay" id="video"></video>
+     <video style="visibility: hidden; position:absolute;" autoplay="autoplay" id="video"></video>
      <!-- 3D CONTENT -->
     <canvas id="rendererCanvas"></canvas>
    </body>

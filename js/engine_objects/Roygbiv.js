@@ -318,7 +318,8 @@ var Roygbiv = function(){
     "getSteerableLookDirection",
     "setObjectRotationMode",
     "resetObjectRotation",
-    "resetRandomPathBehavior"
+    "resetRandomPathBehavior",
+    "createHandTrackControl"
   ];
 
   this.globals = new Object();
@@ -3127,6 +3128,15 @@ Roygbiv.prototype.createOrbitControl = function(parameters){
   preConditions.checkIfNumberOnlyIfExists(ROYGBIV.createOrbitControl, preConditions.keyboardRotationSpeed, parameters.keyboardRotationSpeed);
   preConditions.checkIfBooleanOnlyIfExists(ROYGBIV.createOrbitControl, preConditions.requestFullScreen, parameters.requestFullScreen);
   return new OrbitControls(parameters);
+}
+
+// Creates and returns an instance of HandTrackControl.
+Roygbiv.prototype.createHandTrackControl = function(parameters){
+  if (mode == 0){
+    return;
+  }
+
+  return new HandTrackControls(parameters);
 }
 
 // ANIMATION FUNCTIONS *********************************************************

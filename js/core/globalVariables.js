@@ -476,6 +476,8 @@ var Text;
 var ROYGBIV;
 
 // HANDTRACKING
+var HANDTRACK_VIDEO_WIDTH = 128;
+var HANDTRACK_VIDEO_HEIGHT = 128;
 var handTrackModel;
 var videoElement;
 var handTrackModelParameters = {

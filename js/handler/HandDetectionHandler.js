@@ -23,7 +23,10 @@ HandDetectionHandler.prototype.onVideoNotEnabled = function(){
 }
 
 HandDetectionHandler.prototype.handleDetectedHand = function(x, y, width, height){
-  console.log(x, y);
+
+  var isRightSide = x >= HANDTRACK_VIDEO_WIDTH /2;
+
+  
 }
 
 HandDetectionHandler.prototype.runDetection = function(){
